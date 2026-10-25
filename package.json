@@ -1,0 +1,27 @@
+{
+  "name": "splendor-duel-ai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AlphaZero-style AI for the board game Splendor Duel: rules engine, ISMCTS, self-play training and a local web app",
+  "license": "MIT",
+  "repository": "github:dylanguo1129/splendor-duel-ai",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "bench": "tsx scripts/bench.ts",
+    "arena": "tsx scripts/arena.ts",
+    "app": "node scripts/sync-model.mjs && vite --config app/vite.config.ts",
+    "build:app": "node scripts/sync-model.mjs && vite build --config app/vite.config.ts",
+    "build:train": "node scripts/build-train.mjs",
+    "train": "node scripts/build-train.mjs && node dist/train/loop.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "esbuild": "^0.24.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11",
+    "vitest": "^2.1.8"
+  }
+}

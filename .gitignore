@@ -1,0 +1,17 @@
+node_modules/
+dist/
+*.log
+data/bga-fixtures/large/
+train/runs/
+train/data/
+models/*.pt
+__pycache__/
+.vite/
+app/vite-dev.log
+train/loop-stdout.log
+models/gen*.json
+app/public/models/
+data/bga-fixtures/finished/
+data/bga-fixtures/live/
+data/bga-fixtures/collect/
+models/exp/

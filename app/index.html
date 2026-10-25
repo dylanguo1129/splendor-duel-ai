@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Splendor Duel AI</title>
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">Splendor Duel <span>AI</span></div>
+      <div class="controls">
+        <label>模式
+          <select id="mode">
+            <option value="hva">人 vs AI</option>
+            <option value="ava">AI vs AI</option>
+            <option value="analysis">局面分析</option>
+          </select>
+        </label>
+        <label>我方
+          <select id="human-seat">
+            <option value="0">先手</option>
+            <option value="1">后手</option>
+          </select>
+        </label>
+        <label>思考时间
+          <select id="think" title="自动：局面简单、已经稳赢时想得短，局面接近、复杂或落后时想得长">
+            <option value="auto:3000" selected>自动 ≈3 秒</option>
+            <option value="auto:8000">自动 ≈8 秒</option>
+            <option value="1000">固定 1 秒</option>
+            <option value="3000">固定 3 秒</option>
+            <option value="8000">固定 8 秒</option>
+            <option value="20000">固定 20 秒</option>
+          </select>
+        </label>
+        <label class="check"><input type="checkbox" id="auto-hint" /> 自动提示</label>
+        <label class="check"><input type="checkbox" id="reveal" /> 显示隐藏信息</label>
+        <button id="new-game" class="primary">新对局</button>
+        <button id="undo">悔棋</button>
+      </div>
+    </header>
+    <main class="layout">
+      <section class="table">
+        <div id="opponent" class="player-area"></div>
+        <div class="center">
+          <div class="cards-col">
+            <div id="royals" class="royals"></div>
+            <div id="pyramid" class="pyramid"></div>
+          </div>
+          <div class="board-col">
+            <div id="board" class="board"></div>
+            <div id="board-info" class="board-info"></div>
+            <div id="board-actions" class="board-actions"></div>
+          </div>
+        </div>
+        <div id="me" class="player-area"></div>
+      </section>
+      <aside class="side">
+        <div id="status" class="status"></div>
+        <div id="ai-panel" class="ai-panel"></div>
+        <div class="actions-wrap">
+          <h3>全部合法动作</h3>
+          <div id="actions" class="actions"></div>
+        </div>
+        <details id="analysis-box" class="analysis-box">
+          <summary>导入局面（JSON）</summary>
+          <textarea id="state-json" rows="6" placeholder="粘贴扩展导出的局面 JSON"></textarea>
+          <div class="row"><button id="load-json">载入</button><button id="export-json">导出当前局面</button></div>
+        </details>
+      </aside>
+    </main>
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>
