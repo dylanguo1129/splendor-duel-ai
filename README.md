@@ -1,6 +1,6 @@
-# Splendor Duel AI
+# Unofficial AI for Splendor Duel
 
-An AlphaZero-style AI for the two-player board game **Splendor Duel** (base game): an exact rules
+An unofficial, fan-made AlphaZero-style AI for the two-player board game Splendor Duel (base game): an exact rules
 engine, information-set Monte Carlo tree search, a small policy/value network trained by self-play,
 and a local web app where you can play against it, watch AI vs AI, or analyse a position.
 
